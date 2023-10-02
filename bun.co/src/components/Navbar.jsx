@@ -9,7 +9,7 @@ const Navbar = () => {
     const NavLinks = [
         {
             Name: 'Home',
-            link: 'home'
+            link: ''
         },
         {
             Name: 'Products',
@@ -40,7 +40,7 @@ const Navbar = () => {
                 </ul>
 
 
-                <div className="flex items-center gap-x-4">
+                <div className="flex items-center gap-x-2 md:gap-x-4">
                     <div className="rounded-full px-2 py-2 bg-white relative flex items-center justify-center">
                         <box-icon name='shopify' type='logo' size="md"></box-icon>
                         <div className="w-4 h-4 rounded-full p-1 bg-gray-400 absolute bottom-2 right-2 flex items-center justify-center text-white text-[10px] font-bold">0</div>
