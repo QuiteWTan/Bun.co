@@ -23,6 +23,10 @@ const Navbar = () => {
             Name: 'Contact',
             link: 'contact',
         },
+        {
+            Name: 'Blog',
+            link: 'Blog',
+        },
     ]
     return (
         <div className="absolute border-b-2 top-0 left-0 right-0 z-10  font-raleway md:py-2 px-2 bg-white">
