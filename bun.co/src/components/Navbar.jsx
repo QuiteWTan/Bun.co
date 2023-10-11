@@ -24,8 +24,8 @@ const Navbar = () => {
             link: 'contact',
         },
         {
-            Name: 'Blog',
-            link: 'Blog',
+            Name: 'News',
+            link: 'news',
         },
     ]
     return (

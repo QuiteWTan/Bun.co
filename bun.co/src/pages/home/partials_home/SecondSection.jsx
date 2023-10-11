@@ -190,8 +190,8 @@ const SecondSection = () => {
                       {Data.Cake.map((data,index) => (
                         <div className={`relative w-full h-full shadow-md border-2  ${index === 4 ? 'min-[550px]:col-span-2 md:col-span-1 md:row-start-1 md:row-end-3 md:col-start-3' : ''}`}>
                             <img src={data.Image} alt="" className='w-full h-full rounded-md'/>
-                            <div className='absolute bg-white/30 backdrop-blur-xl w-full py-2 bottom-0 px-2 text-xs sm:text-sm lg:text-base'>
-                              <h1 className='font-bold text-gray-800'>{data.Name}</h1>
+                            <div className='absolute bg-white/30 backdrop-blur-xl w-full py-2 bottom-0 px-2 text-sm lg:text-base'>
+                              <h1 className='font-bold text-gray-800 '>{data.Name}</h1>
                               <p className='font-bold text-gray-500'>{data.Price}</p>
                             </div>
                         </div>

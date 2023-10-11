@@ -21,6 +21,7 @@ export default {
         'catalogHomeSM': 'repeat(2, minmax(240px, 340px))',
         'catalogHomeXS': 'repeat(1, minmax(240px, 340px))',
         'fs': 'repeat(5, minmax(40px, 80px))',
+        'wrap': 'repeat( auto-fit, minmax(250px, 1fr) )'
       },
       gridTemplateRows: {
         'fs': 'repeat(5, minmax(40px, 80px))',

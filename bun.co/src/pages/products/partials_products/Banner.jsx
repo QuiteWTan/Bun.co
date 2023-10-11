@@ -16,9 +16,9 @@ const Banner = () => {
     <div className='w-full flex justify-center font-poppins overflow-x-hidden'>
         <div className='py-18 w-full flex justify-start'>
             <div style={{transform:`translateX(-${current * 100}vw)`}} className='w-[300vw] transition-all duration-1000 flex'>
-              <div className='w-[100vw] h-screen md:h-[650px] flex justify-center relative'>
-                <div className='w-[100vw] sm:w-[80vw] md:h-[650px] relative flex justify-center items-center'>
-                  <img src={Banner1} alt="" className='w-[100vw] sm:w-[80vw] h-full'/>
+              <div className='w-[100vw] h-screen md:h-[700px] flex justify-center relative'>
+                <div className='w-[100vw] sm:w-[90vw] md:h-[700px] relative flex justify-center items-center'>
+                  <img src={Banner1} alt="" className='w-[100vw] sm:w-[90vw] h-full'/>
                   <div className='absolute p-4 backdrop-blur-md bg-white/30 top-[30%] left-0 md:left-8 text-4xl rounded-md flex flex-col gap-3'>
                     <h1 className='bg-yellow-700 px-2 text-white rounded-md w-fit'>HAPPY NATIONAL BREAD DAY!</h1>
                     <h2 className='font-bold'>ALL BREAD IS OFF BY 15%</h2>
@@ -32,9 +32,9 @@ const Banner = () => {
                   </button>
                 </div>
               </div>
-              <div className='w-[100vw] h-screen md:h-[650px] flex justify-center'>
-                <div className='w-[100vw] sm:w-[80vw] md:h-[650px] relative flex justify-center items-center'>
-                  <img src={Banner2} alt="" className='w-[100vw] sm:w-[80vw] h-full'/>
+              <div className='w-[100vw] h-screen md:h-[700px] flex justify-center'>
+                <div className='w-[100vw] sm:w-[90vw] md:h-[700px] relative flex justify-center items-center'>
+                  <img src={Banner2} alt="" className='w-[100vw] sm:w-[90vw] h-full'/>
                   <div className='absolute p-4 backdrop-blur-md bg-white/30 top-[30%] left-0 md:left-8 text-4xl rounded-md flex flex-col gap-3'>
                     <h1 className='bg-gray-700 px-2 text-white rounded-md w-fit'>Get 25% OFF</h1>
                     <h2 className='font-bold'>ON YOUR <br /> FIRST PURCHASE</h2>
@@ -48,9 +48,9 @@ const Banner = () => {
                   </button>
                 </div>
               </div>
-              <div className='w-[100vw] h-screen md:h-[650px] flex justify-center'>
-                <div className='w-[100vw] sm:w-[80vw] md:h-[650px] relative flex justify-center items-center'>
-                  <img src={Banner3} alt="" className='w-[100vw] sm:w-[80vw] h-full'/>
+              <div className='w-[100vw] h-screen md:h-[700px] flex justify-center'>
+                <div className='w-[100vw] sm:w-[90vw] md:h-[700px] relative flex justify-center items-center'>
+                  <img src={Banner3} alt="" className='w-[100vw] sm:w-[90vw] h-full'/>
                   <div className='absolute p-4 backdrop-blur-md bg-white/30 top-[30%] left-0 md:left-8 text-4xl rounded-md flex flex-col gap-3'>
                   <h1 className='px-2 bg-orange-800 text-white rounded-md w-fit'>NEW BREAD MENU <br />COMING SOON </h1>
                     <h2 className='font-bold'>STAY TUNE!</h2>
