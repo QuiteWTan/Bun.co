@@ -3,6 +3,7 @@ import Test1 from '../products/Cake1.jpg'
 import { useDispatch } from 'react-redux'
 import { cartActions } from '../../redux/slices/cartSlice'
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 const ProductCard = ({data}) => {
   const dispatch = useDispatch()
 
@@ -15,12 +16,14 @@ const ProductCard = ({data}) => {
     }))
     toast.success('Item added to cart')
   }
-
+  
   const [color,setColor] =useState(false)
   return (
     <div className='flex flex-col max-w-[280px] font-poppins rounded-md shadow-xl overflow-hidden border-2 h-full'>
       <div className='relative w-full h-full'>
-        <img src={data.Image} alt="" className=' max-w-[300px] max-h-[240px] md:max-h-[280px] w-full h-full'/>
+        <Link to={`/products/${data.id}`}>
+          <img src={data.Image} alt="" className=' max-w-[300px] max-h-[240px] md:max-h-[280px] w-full h-full'/>
+        </Link >
         <h1 className='absolute bottom-1 left-1 py-1 px-2  bg-white/30 backdrop-blur-xl font-bold rounded-md'>{data.Category}</h1>
         <div className='absolute right-2 top-2 duration-300 transition-all p-1 flex items-center justify-center bg-[#BCA37F] rounded-full' onClick={() => setColor(!color)}>
           <box-icon name='heart' type='solid' color={`${color? 'red' : 'white'}`} ></box-icon>

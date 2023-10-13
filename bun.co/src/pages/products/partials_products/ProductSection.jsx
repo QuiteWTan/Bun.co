@@ -42,7 +42,7 @@ const ProductSection = () => {
     LengthCurrent = e.target.value.length;
     setCategoryProduct(SearchProduct)
   }
-
+  
   const ProductButton = ['All','Cake', 'Doughnut', 'Ice Cream', 'Pie', 'Pudding']
   const SortButton = ['Default','Ascending','Descending']
   return (
@@ -91,7 +91,7 @@ const ProductSection = () => {
               </div>
             </div>
           </div>
-          <div className='flex flex-col w-2/3 md:w-1/3'>
+          <div className='flex flex-col w-full md:w-1/3'>
             <h1 className=' px-4 mb-2'>Search Product:</h1>
             <div className=' border-[#9f8155] border-2 py-2 px-4 rounded-full flex items-center shadow-md'>
               <input type="text" className='focus:outline-none w-full' placeholder='Search here' onChange={() => FindProduct(e)}/>
