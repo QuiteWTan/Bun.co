@@ -204,7 +204,6 @@ export const ProductData = [
     }, 
     {
       id:"20",
-      Category:'Pudding',
       Name:'Creme Caramel Pudding',
       Price:'$500',
       Category:'Pudding',
