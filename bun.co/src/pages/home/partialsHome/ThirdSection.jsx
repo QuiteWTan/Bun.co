@@ -1,7 +1,7 @@
 import React from 'react'
-import ChooseUs1 from '../home/ChooseUs1.jpg'
-import ChooseUs2 from '../home/ChooseUs2.jpg'
-import ChooseUs3 from '../home/ChooseUs3.jpg'
+import ChooseUs1 from '../homeImage/ChooseUs1.jpg'
+import ChooseUs2 from '../homeImage/ChooseUs2.jpg'
+import ChooseUs3 from '../homeImage/ChooseUs3.jpg'
 const ThirdSection = () => {
   return (
     <div className=' bg-gray-200 text-gray-800 w-full gap-12 px-4 py-6 md:py-0 font-poppins flex justify-center  overflow-x-hidden'>

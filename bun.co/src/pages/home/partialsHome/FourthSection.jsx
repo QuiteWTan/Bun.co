@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import Package1 from '../home/Packaging1.jpg'
-import Package2 from '../home/Packaging2.jpg'
-import Package3 from '../home/Packaging3.jpg'
-import Package4 from '../home/Packaging4.jpg'
+import Package1 from '../homeImage/Packaging1.jpg'
+import Package2 from '../homeImage/Packaging2.jpg'
+import Package3 from '../homeImage/Packaging3.jpg'
+import Package4 from '../homeImage/Packaging4.jpg'
 
 const FourthSection = () => {
     const ImageList = [Package1,Package2,Package3,Package4]

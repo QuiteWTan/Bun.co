@@ -1,5 +1,5 @@
 import React from 'react'
-import FirstSection1 from '../home/FirstSection.jpg'
+import FirstSection1 from '../homeImage/FirstSection.jpg'
 const FirstSection = () => {
   return (
     <div className='max-w-[1200px] w-full flex flex-col-reverse md:flex-row gap-12 px-4 py-6 md:section'>

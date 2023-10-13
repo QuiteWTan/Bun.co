@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import Limited from '../home/LimitedOffer.png'
+import Limited from '../homeImage/LimitedOffer.png'
 
 const LimitedOffer = () => {
 
