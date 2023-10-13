@@ -44,10 +44,6 @@ function App() {
           path:'/news',
           element:<NewsPage/>
         },
-        {
-          path:'products/:id',
-          element:<ProductDetails/>
-        }
       ]
     },
     {
