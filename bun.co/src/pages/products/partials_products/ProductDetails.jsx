@@ -15,9 +15,6 @@ const ProductDetails = () => {
   const [IndexCatalog,setIndexCatalog] = useState(0);
   const { Image, Name, Price, Description, Category, ShortDescription, Review } = Product;
   const [DetailButton, setDetailButton] = useState(['Description', 'Reviews'])
-  useEffect(()=>{
-
-  },[Review])
   const [formValues, setFormValues] = useState({
     Subject: '',
     Content: '',
@@ -31,7 +28,7 @@ const ProductDetails = () => {
   }
   const currentDate = new Date();
   const formattedDateTime = currentDate.toLocaleString();
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
     if(!formValues.Subject || !formValues.Content){
       e.preventDefault();
     }
@@ -117,7 +114,7 @@ const ProductDetails = () => {
                     }
                   </div>
                   <hr className='w-full h-1 bg-gray-700'/>
-                  <form action="" className='flex flex-col w-full max-w-[650px] gap-4 px-4' onSubmit={(e) => handleSubmit(e)}>
+                  <form action="" className='flex flex-col w-full max-w-[650px] gap-4 px-4' onSubmit={(e)=> handleSubmit(e)}>
                     <h1 className='text-xl md:text-2xl w-full font-bold text-gray-800 my-4'>Give Us A Review</h1>
                     <input 
                       type="text" 
