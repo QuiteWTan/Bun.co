@@ -37,10 +37,10 @@ const LimitedOffer = () => {
             </div>
             <div className='flex flex-col max-w-[600px] justify-center gap-6 '>
               <h1 className='text-xl md:text-3xl'>LIMITED OFFER</h1>
-              <h1 className='text-3xl md:text-5xl font-serif font-bold'>CHOCOLATE CAKE</h1>
+              <h1 className='text-3xl md:text-5xl  font-bold'>CHOCOLATE CAKE</h1>
 
-              <div className='flex flex-row items-center gap-3 bg-[#8a7b6d] px-6 py-3 rounded-sm w-fit justify-end'>
-                <h1 className='text-3xl lg:text-5xl text-gray-50 font-bold'  >{day} : {hour} : {minute} : {second}</h1>
+              <div className='flex flex-row items-center gap-3 bg-[#8a7b6d] px-6 py-2 rounded-sm w-fit justify-end'>
+                <h1 className='text-3xl lg:text-5xl text-gray-50 '  >{day} : {hour} : {minute} : {second}</h1>
               </div>
               
               <h1 className='text-xl sm:text-3xl md:text-5xl  font-cinzel'>──── 50% <span className='text-lg sm:text-2xl md:text-5xl font-poppins'>off</span></h1>
