@@ -1,8 +1,8 @@
 import React from 'react'
-import FirstSection from './partials_about/FirstSection'
-import SecondSection from './partials_about/SecondSection'
-import ThirdSection from './partials_about/ThirdSection'
-import FourthSection from './partials_about/FourthSection'
+import FirstSection from './partialsAbout/FirstSection'
+import SecondSection from './partialsAbout/SecondSection'
+import ThirdSection from './partialsAbout/ThirdSection'
+import FourthSection from './partialsAbout/FourthSection'
 
 const AboutPage = () => {
   return (

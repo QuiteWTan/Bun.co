@@ -1,9 +1,9 @@
 import React from 'react'
-import FirstSection from './partials_home/FirstSection'
-import SecondSection from './partials_home/secondsection'
-import ThirdSection from './partials_home/ThirdSection'
-import FourthSection from './partials_home/FourthSection'
-import LimitedOffer from './partials_home/LimitedOffer'
+import FirstSection from './partialsHome/FirstSection'
+import SecondSection from './partialsHome/secondsection'
+import ThirdSection from './partialsHome/ThirdSection'
+import FourthSection from './partialsHome/FourthSection'
+import LimitedOffer from './partialsHome/LimitedOffer'
 
 const HomePage = () => {
   return (

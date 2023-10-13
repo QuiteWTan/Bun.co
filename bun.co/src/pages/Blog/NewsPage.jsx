@@ -1,6 +1,6 @@
 import React from 'react'
-import FirstSection from './partials_news/FirstSection'
-import SecondSection from './partials_news/SecondSection'
+import FirstSection from './partialsBlog/FirstSection'
+import SecondSection from './partialsBlog/SecondSection'
 
 const NewsPage = () => {
   return (

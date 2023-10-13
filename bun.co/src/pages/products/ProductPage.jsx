@@ -1,7 +1,7 @@
 import React from 'react'
-import Banner from './partials_products/Banner'
-import ProductSection from './partials_products/ProductSection'
-import LimitedOffer from '../home/partials_home/LimitedOffer'
+import Banner from './partialsProducts/Banner'
+import ProductSection from './partialsProducts/ProductSection'
+import LimitedOffer from '../home/partialsHome/LimitedOffer'
 
 const ProductPage = () => {
   return (

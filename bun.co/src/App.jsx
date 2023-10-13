@@ -8,6 +8,7 @@ import ProductPage from './pages/products/ProductPage';
 import LoginPage from './pages/Auth/LoginPage';
 import AboutPage from './pages/About/AboutPage';
 import NewsPage from './pages/Blog/NewsPage';
+import ProductDetails from './pages/products/partialsProducts/productDetails';
 
 
 function App() {
