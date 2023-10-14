@@ -1,7 +1,7 @@
 import {AiOutlineTwitter,AiOutlineWhatsApp,AiOutlineSkype,AiOutlineInstagram} from 'react-icons/ai';
 import {Link} from 'react-router-dom';
-import Package1 from '../pages/home/home/Packaging1.jpg'
-import Package2 from '../pages/home/home/Packaging2.jpg'
+import Package1 from '../pages/home/homeImage/Packaging1.jpg'
+import Package2 from '../pages/home/homeImage/Packaging2.jpg'
 
 const Footer = () => {
     return(

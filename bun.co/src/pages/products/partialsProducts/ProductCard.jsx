@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Test1 from '../products/Cake1.jpg'
 import { useDispatch } from 'react-redux'
 import { cartActions } from '../../redux/slices/cartSlice'
 import { toast } from 'react-toastify';
@@ -19,7 +18,7 @@ const ProductCard = ({data}) => {
   
   const [color,setColor] =useState(false)
   return (
-    <div className='flex flex-col max-w-[280px] font-poppins rounded-md shadow-xl overflow-hidden border-2 h-full'>
+    <div className='flex flex-col max-w-[280px] font-poppins rounded-md shadow-xl border-2 h-full'>
       <div className='relative w-full h-full'>
         <Link to={`/products/${data.id}`}>
           <img src={data.Image} alt="" className=' max-w-[300px] max-h-[240px] md:max-h-[280px] w-full h-full'/>
@@ -31,7 +30,7 @@ const ProductCard = ({data}) => {
       </div>
       <div className='flex flex-col justify-between gap-2 p-2 text-gray-800 max-h-[100px] h-full relative'>
         <h1 className='text-xs md:text-sm lg:text-base font-bold '>{data.Name}</h1>
-        <p className='text-lg'>{data.Price}</p>
+        <p className='text-lg'>$ {data.Price}</p>
         <div className='absolute p-1 bg-gray-700 flex items-center justify-center rounded-full bottom-2 right-2 shadow-md hover:scale-110 transition-all duration-300' onClick={addToCart}>
           <box-icon name='plus' color='white'></box-icon>
         </div>

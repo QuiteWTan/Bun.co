@@ -107,9 +107,7 @@ const ProductSection = () => {
             {
               categoryProduct.length !== 0 ? 
                 categoryProduct.map((data,index) => (
-                  <Link to={`${data.id}`}>
-                    <ProductCard data={data} key={index}/>
-                  </Link>
+                  <ProductCard data={data} key={index}/>
                 ))
 
               : <h1 className='text-center text-xl md:text-4xl col-span-2 md:col-span-4 my-4'> Product not found</h1>

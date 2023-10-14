@@ -61,10 +61,12 @@ const Navbar = () => {
 
 
                 <div className="flex items-center gap-x-2 md:gap-x-4">
-                    <div className="rounded-full px-2 py-2 bg-white relative flex items-center justify-center">
-                        <box-icon name='shopify' type='logo' size="34px"></box-icon>
-                        <div className="w-4 h-4 rounded-full p-2 bg-[#BCA37F] absolute bottom-2 right-2 flex items-center justify-center text-white text-[12px] font-bold font-poppins">{totalQuantity}</div>
-                    </div>
+                    <Link to='cart'> 
+                        <div className="rounded-full px-2 py-2 bg-white relative flex items-center justify-center">
+                            <box-icon name='shopify' type='logo' size="34px"></box-icon>
+                            <div className="w-4 h-4 rounded-full p-2 bg-[#BCA37F] absolute bottom-2 right-2 flex items-center justify-center text-white text-[12px] font-bold font-poppins">{totalQuantity}</div>
+                        </div>
+                    </Link>
                     <div className="rounded-full p-1 bg-white border-2 flex items-center justify-center">
                         <box-icon name='user' size="20px"></box-icon>
                     </div>
