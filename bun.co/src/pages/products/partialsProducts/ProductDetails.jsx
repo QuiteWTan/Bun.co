@@ -7,6 +7,7 @@ import ProductCard from './ProductCard'
 import { useDispatch } from 'react-redux'
 import { cartActions } from '../../redux/slices/cartSlice'
 import { toast } from 'react-toastify'
+
 const ProductDetails = () => {
   const dispatch = useDispatch()
   const [symbol, setSymbol] = useState()
