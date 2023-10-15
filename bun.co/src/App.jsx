@@ -63,10 +63,6 @@ function App() {
           path:'billing',
           element:<ProtectedAuth><Billing/></ProtectedAuth>
         },
-        {
-          path:'/*',
-          element:<ProtectedAuth/>
-        },
       ]
     },
     {

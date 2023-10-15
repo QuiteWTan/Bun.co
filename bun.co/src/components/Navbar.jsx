@@ -39,6 +39,10 @@ const Navbar = () => {
             link: 'about'
         },
         {
+            Name: 'Contact',
+            link: 'contact',
+        },
+        {
             Name: 'News',
             link: 'news',
         },
