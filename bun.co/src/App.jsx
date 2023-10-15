@@ -10,7 +10,9 @@ import AboutPage from './pages/About/AboutPage';
 import NewsPage from './pages/Blog/NewsPage';
 import Cart from './pages/Cart/Cart';
 import ProductDetails from './pages/products/partialsProducts/ProductDetails';
-
+import Billing from './pages/Billings/Billing';
+import RegisterPage from './pages/Auth/RegisterPage';
+import ProtectedAuth from './pages/Router/ProtectedAuth';
 
 function App() {
 
@@ -34,6 +36,10 @@ function App() {
           element: <HomePage/>,
         },
         {
+          path:'/home',
+          element: <HomePage/>,
+        },
+        {
           path:'/products',
           element: <ProductPage/>,
         },
@@ -52,17 +58,21 @@ function App() {
         {
           path:'cart',
           element:<Cart/>
-        }
+        },
+        {
+          path:'billing',
+          element:<ProtectedAuth><Billing/></ProtectedAuth>
+        },
       ]
     },
     {
       path:'/login',
       element: <LoginPage/>
     },
-    // {
-    //   path:'/register',
-    //   element: <RegisterPage/>
-    // },
+    {
+      path:'/register',
+      element: <RegisterPage/>
+    },
   ])
 
 
