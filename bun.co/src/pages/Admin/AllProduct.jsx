@@ -7,12 +7,11 @@ import { motion } from 'framer-motion'
 import AddProduct from './AddProduct'
 const AllProduct = () => {
   const {data} = useGetData('products')
-  console.log(data)
   const Button = ['View product', 'Add Product']
   const [indexProduct, setIndexProduct] = useState(0)
   return (
     <div className='w-full flex flex-col items-center py-4 px-2 md:px-12 font-poppins '>
-      <motion.div className='bg-gray-300 px-1 py-2 flex  gap-2 self-center rounded-full max-w-[1300px] w-full'> 
+      <motion.div className='bg-gray-300 px-1 py-2 flex  gap-2 self-center rounded-full '> 
           {
             Button.map((button, index)=> (
               <button className='relative px-4 py-1 flex items-center justify-center font-bold border-2  rounded-full' onClick={() => setIndexProduct(!indexProduct)}

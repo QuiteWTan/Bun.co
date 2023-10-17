@@ -6,6 +6,8 @@ import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useAuth } from "../pages/custom-hooks/useAuth";
 import AnimatedProfile from "./animatedProfile";
+import useGetData from "../pages/custom-hooks/useGetData";
+
 const Navbar = () => {
     const location = useLocation()
     const headerRef = useRef(null)
@@ -21,8 +23,17 @@ const Navbar = () => {
     }
     useEffect(() => {
         stickyHeader();
+        if(currentUser){
+            user.forEach(element => {
+                if(element.email == currentUser.email){
+                    setRole(element.role)
+                }
+            });
+        }
         return () => window.removeEventListener("scroll",stickyHeader)
     })
+    const {data:user} = useGetData('users')
+    const [role,setRole] =useState('')
     const {currentUser} = useAuth()
     const [openNav, setOpenNav] = useState(false);
     const [activeNav, setActiveNav] = useState(0)
@@ -48,7 +59,7 @@ const Navbar = () => {
         <header className="absolute border-b-2 top-0 left-0 right-0 z-10  font-raleway md:py-2 px-2 bg-white" ref={headerRef}>
             <div className="flex md:max-w-[1300px] max-w-[600px] m-auto flex-row justify-between items-center w-full h-full py-2 md:py-0 px-2 md:px-0 ">
                 <Link to='/home'>
-                    <div className="font-cinzel text-xl  md:text-2xl lg:text-4xl hidden md:flex">
+                    <div className="font-cinzel text-lg  md:text-2xl lg:text-4xl  md:flex">
                         BUN <span className="text-[#BCA37F]">.CO</span>
                     </div>
                 </Link>
@@ -62,6 +73,7 @@ const Navbar = () => {
                             {nav.Name.toUpperCase()}
                         </Link>
                     ))}
+                    
                 </ul>
 
 
@@ -72,7 +84,7 @@ const Navbar = () => {
                             <div className="w-4 h-4 rounded-full p-2 bg-[#BCA37F] absolute bottom-2 right-2 flex items-center justify-center text-white text-[12px] font-bold font-poppins">{totalQuantity}</div>
                         </div>
                     </Link>
-                    <AnimatedProfile color={'black'}/>      
+                    <AnimatedProfile color={'black'} roles={role}/>      
 
                     <div className="flex md:hidden p-1 rounded-md border-gray-600 border-2 items-center ml-1" onClick={() => setOpenNav(!openNav)}>
                     {

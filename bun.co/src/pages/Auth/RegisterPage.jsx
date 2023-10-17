@@ -38,6 +38,7 @@ const RegisterPage = () => {
             displayName:formValues.Username,
             email:formValues.Email,
             photoURL:downloadURL,
+            role:"Customer"
           })
         })
       })
@@ -116,7 +117,7 @@ const RegisterPage = () => {
             
 
             <button type="submit" className='px-8 rounded-full bg-gray-700 text-white hover:scale-105 mt-2 py-2 duration-300 transition-all w-fit self-center'>SIGN UP </button>
-            <p className='text-sm text-gray-600  w-fit self-center text-center mt-2'>Already have an account? <span className='border-gray-600 border-b'>Sign in </span></p>
+            <p className='text-sm text-gray-600  w-fit self-center text-center mt-2'>Already have an account? <span className='border-gray-600 border-b'><Link to="/login">Sign in </Link></span></p>
           </form>
           
       </div>

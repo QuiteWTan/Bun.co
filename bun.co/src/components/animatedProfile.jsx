@@ -1,10 +1,13 @@
 
-import React, { useState } from "react";
+import React, { useState,useEffect  } from "react";
 import { motion} from "framer-motion";
 import { useAuth } from "../pages/custom-hooks/useAuth"
 import { Link } from "react-router-dom";
 import { getAuth, signOut } from "firebase/auth";
 import { toast } from "react-toastify";
+import useGetData from "../pages/custom-hooks/useGetData";
+
+
 const itemVariants = {
     open: {
       opacity: 1,
@@ -15,16 +18,18 @@ const itemVariants = {
   };
   
 
-export default function AnimatedProfile({color}) {
-    const SignOut = () => {
-        const auth = getAuth();
-            signOut(auth).then(() => {
-                toast.success('Logged out successful')
-            }).catch((error) => {
-                toast.error(error.message)
-        });
-      }
 
+
+const AnimatedProfile = ({color, roles}) => {
+
+  const SignOut = () => {
+      const auth = getAuth();
+          signOut(auth).then(() => {
+              toast.success('Logged out successful')
+          }).catch((error) => {
+              toast.error(error.message)
+      });
+    }
     const [isOpen, setIsOpen] = useState(false);
     const {currentUser} = useAuth()
     return (
@@ -83,15 +88,27 @@ export default function AnimatedProfile({color}) {
           style={{ pointerEvents: isOpen ? "auto" : "none" }}
         >
           <motion.li variants={itemVariants} className="text-lg font-bold break-normal flex flex-col">
-            <h1 className="font-normal text-sm">Profile Name:</h1>
+            <h1 className="font-normal text-sm">{roles ? roles : 'Guest'}</h1>
             {
                 currentUser ? 
                 currentUser.displayName : 'Anonymous'
             }
           </motion.li>
+          
           <motion.li variants={itemVariants} className="pt-2">
-                  Setting
-            </motion.li>
+              Setting
+          </motion.li>
+          {
+            roles == 'Admin' ? 
+                <motion.li variants={itemVariants}>
+                    <Link to='/admin/dashboard'>
+                        Dashboard
+                    </Link>
+                </motion.li>
+            :
+            null
+          }
+          
           {
             currentUser ? 
             <motion.li variants={itemVariants}>
@@ -118,3 +135,5 @@ export default function AnimatedProfile({color}) {
       </motion.nav>
     );
   }
+
+  export default AnimatedProfile

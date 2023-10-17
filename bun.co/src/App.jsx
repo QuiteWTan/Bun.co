@@ -20,6 +20,7 @@ import AddProduct from './pages/Admin/AddProduct';
 import Layout from './pages/Layout/Layout';
 import Users from './pages/Admin/Users';
 import Orders from './pages/Admin/Orders';
+import AdminAuth from './pages/Router/AdminAuth';
 
 function App() {
   
@@ -63,27 +64,27 @@ function App() {
         },
         {
           path:'admin/dashboard',
-          element:<ProtectedAuth>
+          element:<AdminAuth>
             <Dashboard/>
-          </ProtectedAuth>
+          </AdminAuth>
         },
         {
           path:'admin/all-product',
-          element:<ProtectedAuth>
+          element:<AdminAuth>
             <AllProduct/>
-          </ProtectedAuth>
+          </AdminAuth>
         },
         {
           path:'admin/users',
-          element:<ProtectedAuth>
+          element:<AdminAuth>
             <Users/>
-          </ProtectedAuth>
+          </AdminAuth>
         },
         {
           path:'admin/orders',
-          element:<ProtectedAuth>
+          element:<AdminAuth>
             <Orders/>
-          </ProtectedAuth>
+          </AdminAuth>
         },
       ]
     },

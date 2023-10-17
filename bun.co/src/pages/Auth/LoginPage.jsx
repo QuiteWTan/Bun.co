@@ -62,7 +62,7 @@ const LoginPage = () => {
             </div>
             <input type="text" />
             <button type='submit' className='px-8 rounded-full bg-gray-700 text-white hover:scale-105 mt-2 py-2 duration-300 transition-all w-fit self-center'>Login</button>
-            <p className='text-sm text-gray-600 border-gray-600 border-b w-fit self-center text-center mt-2'>Create an account</p>
+            <p className='text-sm text-gray-600 border-gray-600 border-b w-fit self-center text-center mt-2'><Link to="/register">Create an account</Link></p>
           </form>
           
       </div>
