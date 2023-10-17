@@ -2,11 +2,12 @@ import { useEffect, useRef, useState } from "react"
 import Logo from '../assets/Logo.png'
 import {AiOutlineInstagram, AiFillLinkedin,AiFillGithub} from 'react-icons/ai';
 import MenuOverlay from "./MenuOverlay";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useAuth } from "../pages/custom-hooks/useAuth";
 import AnimatedProfile from "./animatedProfile";
 const Navbar = () => {
+    const location = useLocation()
     const headerRef = useRef(null)
     const totalQuantity = useSelector(state => state.cart.totalQuantity)
     const stickyHeader = () => {
@@ -27,37 +28,38 @@ const Navbar = () => {
     const [activeNav, setActiveNav] = useState(0)
     const NavLinks = [
         {
-            Name: 'Home',
-            link: ''
+            Name: 'home',
+            link: 'home'
         },
         {
-            Name: 'Products',
+            Name: 'products',
             link: 'products'
         },
         {
-            Name: 'About',
+            Name: 'about',
             link: 'about'
         },
         {
-            Name: 'Contact',
-            link: 'contact',
-        },
-        {
-            Name: 'News',
+            Name: 'news',
             link: 'news',
         },
     ]
     return (
         <header className="absolute border-b-2 top-0 left-0 right-0 z-10  font-raleway md:py-2 px-2 bg-white" ref={headerRef}>
             <div className="flex md:max-w-[1300px] max-w-[600px] m-auto flex-row justify-between items-center w-full h-full py-2 md:py-0 px-2 md:px-0 ">
-                <div className="font-cinzel text-2xl md:text-4xl">
-                    BUN <span className="text-[#BCA37F]">.CO</span>
-                </div>
+                <Link to='/home'>
+                    <div className="font-cinzel text-xl  md:text-2xl lg:text-4xl hidden md:flex">
+                        BUN <span className="text-[#BCA37F]">.CO</span>
+                    </div>
+                </Link>
 
                 <ul className="hidden md:flex flex-row justify-between gap-x-8 font-poppins text-[15px]">
                     {NavLinks.map((nav,index)=>(
-                        <Link to={nav.link} className={` ${index === activeNav ? 'border-gray-700 font-bold hover:border-transparent' : ''} border-b-2 border-transparent hover:border-gray-700 hover:font-bold selection:transition-all duration-300`} key={index} onClick={() => setActiveNav(index)}>
-                            {nav.Name}
+                        <Link to={nav.link} 
+                        className={` 
+                        ${location.pathname.startsWith(`/${nav.Name}`) ? 'border-gray-700 font-bold hover:border-transparent' : ''} border-b-2 border-transparent hover:border-gray-700 hover:font-bold selection:transition-all duration-300`} 
+                        key={index} onClick={() => setActiveNav(index)}>
+                            {nav.Name.toUpperCase()}
                         </Link>
                     ))}
                 </ul>
@@ -70,7 +72,7 @@ const Navbar = () => {
                             <div className="w-4 h-4 rounded-full p-2 bg-[#BCA37F] absolute bottom-2 right-2 flex items-center justify-center text-white text-[12px] font-bold font-poppins">{totalQuantity}</div>
                         </div>
                     </Link>
-                    <AnimatedProfile/>      
+                    <AnimatedProfile color={'black'}/>      
 
                     <div className="flex md:hidden p-1 rounded-md border-gray-600 border-2 items-center ml-1" onClick={() => setOpenNav(!openNav)}>
                     {

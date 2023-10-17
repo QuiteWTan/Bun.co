@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowserRouter as Router, Routes,Route, createBrowserRouter, Outlet, RouterProvider} from 'react-router-dom';
+import { BrowserRouter as Router, Routes,Route, createBrowserRouter, Outlet, RouterProvider, useLocation} from 'react-router-dom';
 import './index.css'
 import Navbar from './components/Navbar'
 import HomePage from './pages/home/HomePage';
@@ -13,18 +13,16 @@ import ProductDetails from './pages/products/partialsProducts/ProductDetails';
 import Billing from './pages/Billings/Billing';
 import RegisterPage from './pages/Auth/RegisterPage';
 import ProtectedAuth from './pages/Router/ProtectedAuth';
+import AdminNav from './pages/Admin/AdminNav';
+import Dashboard from './pages/Admin/Dashboard';
+import AllProduct from './pages/Admin/AllProduct';
+import AddProduct from './pages/Admin/AddProduct';
+import Layout from './pages/Layout/Layout';
+import Users from './pages/Admin/Users';
+import Orders from './pages/Admin/Orders';
 
 function App() {
-
-  const Layout = () => {
-    return(
-      <>
-        <Navbar/>
-        <Outlet/>
-        <Footer/>
-      </>
-    )
-  }
+  
 
   const route = createBrowserRouter([
     {
@@ -62,6 +60,30 @@ function App() {
         {
           path:'billing',
           element:<ProtectedAuth><Billing/></ProtectedAuth>
+        },
+        {
+          path:'admin/dashboard',
+          element:<ProtectedAuth>
+            <Dashboard/>
+          </ProtectedAuth>
+        },
+        {
+          path:'admin/all-product',
+          element:<ProtectedAuth>
+            <AllProduct/>
+          </ProtectedAuth>
+        },
+        {
+          path:'admin/users',
+          element:<ProtectedAuth>
+            <Users/>
+          </ProtectedAuth>
+        },
+        {
+          path:'admin/orders',
+          element:<ProtectedAuth>
+            <Orders/>
+          </ProtectedAuth>
         },
       ]
     },

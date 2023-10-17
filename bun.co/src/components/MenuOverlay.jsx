@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import {AiOutlineInstagram, AiFillLinkedin,AiFillGithub,AiOutlineTwitter} from 'react-icons/ai';
 
-const MenuOverlay = ({ NavLinks, NavState}) => {
+const MenuOverlay = ({ NavLinks, NavState, text}) => {
   return (
-    <ul className='flex flex-col items-center'>
+    <ul className={`flex flex-col items-center ${text}`}>
         {NavLinks.map((link, index) => (
             <Link to=""
                 className="block py-2 pl-3 pr-4 sm:text-xl rounded md:p-0" key={index}>

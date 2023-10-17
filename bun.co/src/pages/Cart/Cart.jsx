@@ -3,8 +3,14 @@ import Cake1 from '../home/homeImage/Cake1.jpg'
 import { cartActions } from '../redux/slices/cartSlice'
 import { useSelector, useDispatch } from 'react-redux'
 import Swal from 'sweetalert2'
+import { useNavigate } from 'react-router'
+
 const Cart = () => {
     const dispatch = useDispatch()
+    const nav = useNavigate()
+    const RedirectSuccess = () => {
+        nav('/billing')
+    }
     const handleCart = () => {
         Swal.fire({
             icon:'question',
@@ -13,7 +19,8 @@ const Cart = () => {
             confirmButtonText: 'Yes',
             }).then((result) => {
             if (result.isConfirmed) {
-                Swal.fire('Purchase Successful!', '', 'success')
+                Swal.fire('Insert your billing to continue', '', 'success')
+                setTimeout(RedirectSuccess(),5000)
             } else if (result.isDenied) {
                 Swal.fire('Purchase has been cancelled', '', 'info')
             }

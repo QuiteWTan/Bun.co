@@ -1,10 +1,19 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-
+import { cartActions } from '../redux/slices/cartSlice'
+import Swal from 'sweetalert2'
+import { useNavigate } from 'react-router'
+import { toast } from 'react-toastify'
+import { addDoc, collection } from 'firebase/firestore'
+import {auth, storage, db} from '../../../firebase.config'
+import { setDoc, doc } from 'firebase/firestore';
+import {ref, getDownloadURL, uploadBytesResumable} from 'firebase/storage'
 const Billing = () => {
     const dispatch = useDispatch()
+    const nav = useNavigate()
     const totalQuantity = useSelector(state => state.cart.totalQuantity)
     const totalAmount = useSelector(state => state.cart.totalAmount)
+    const cartItems = useSelector(state => state.cart.cartItems)
     const [formValues, setFormValues] = useState({
         Name: '',
         Email: '',
@@ -14,13 +23,52 @@ const Billing = () => {
         Postal:'',
         Country:'',
       });
-    
+      
       const handleChange = (name,value) => {
         setFormValues((prevFormValues) => ({
           ...prevFormValues,
           [name]: value,
           }));
       }
+
+      const ClearCart = async(e) =>{
+          if(totalQuantity!=0){
+            e.preventDefault()
+            try{
+              const docRef = await collection(db, 'orders')
+              await addDoc(docRef, {
+                Name: formValues.Name,
+                Email:formValues.Email,
+                Phone: formValues.Phone,
+                Address:formValues.Address,
+                City: formValues.City,
+                Postal: formValues.Postal,
+                Country:formValues.Country,
+                item:cartItems,
+                totalQuantity : totalQuantity, 
+                totalAmount: totalAmount + totalAmount * 2/100 + totalAmount * 5/100
+              })
+
+             }catch(error){
+               toast.error(error.message)
+              } 
+            // dispatch(cartActions.removeAllItem())
+            Swal.fire({
+              icon: 'success',
+              title: 'Success',
+              text: 'Item Purchase is successfull',
+            })
+        }else{
+            dispatch(cartActions.removeAllItem())
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'No Cart in your items go purchase some!',
+            })
+        }
+        // nav('/home')
+      }
+   
     return (
         <div className='w-full flex justify-center py-24 px-2 md:px-12 font-poppins'>
             <div className='max-w-[1300px] w-full flex flex-wrap gap-4 justify-center'>
@@ -35,7 +83,7 @@ const Billing = () => {
                       onChange={(e) => handleChange(e.target.name,e.target.value)}
                       />
                     <input 
-                      type="text" 
+                      type="email" 
                       className='focus:outline-none border border-gray-500 rounded-sm px-2 py-1 w-full' 
                       placeholder='Email' 
                       name='Email' 
@@ -60,7 +108,7 @@ const Billing = () => {
                       />
                       <input 
                       type="text" 
-                      className='focus:outline-none border border-gray-500 rounded-sm px-2 py-1 w-full' 
+                      className='focus:outline-none border border-gray-500 rounded-sm px-2 py-1 w-full ' 
                       placeholder='City' 
                       name='City' 
                       value={formValues.City}
@@ -106,7 +154,7 @@ const Billing = () => {
                         <h1 className='font-bold'>Total Amount</h1>
                         <h1>$ {totalAmount + totalAmount * 2/100 + totalAmount * 5/100}</h1>
                     </div>
-                    <button className='w-full rounded-full bg-gray-700 text-white hover:scale-105 mt-2 py-2 duration-300 transition-all'>Checkout</button>
+                    <button className='w-full rounded-full bg-gray-700 text-white hover:scale-105 mt-2 py-2 duration-300 transition-all' onClick={ClearCart}>Checkout</button>
                 </div>
             </div>
         </div>

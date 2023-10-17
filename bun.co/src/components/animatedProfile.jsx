@@ -15,7 +15,7 @@ const itemVariants = {
   };
   
 
-export default function AnimatedProfile() {
+export default function AnimatedProfile({color}) {
     const SignOut = () => {
         const auth = getAuth();
             signOut(auth).then(() => {
@@ -31,7 +31,7 @@ export default function AnimatedProfile() {
       <motion.nav
         initial={false}
         animate={isOpen ? "open" : "closed"}
-        className="relative p-2"
+        className="relative p-2 "
       >
         <motion.button
           whileTap={{ scale: 0.97 }}
@@ -46,20 +46,20 @@ export default function AnimatedProfile() {
                 transition={{ duration: 0.2 }}
                 style={{ originY: 0.55 }}
             >
-                <svg width="15" height="15" viewBox="0 0 20 20">
-                <path d="M0 7 L 20 7 L 10 16" />
+                <svg  viewBox="0 0 20 20" className="w-3 h-3 md:w-5">
+                  <path d="M0 7 L 20 7 L 10 16" fill={color} />
                 </svg>
           </motion.div>
-            <div className="rounded-full p-1 bg-white border-2 flex items-center justify-center">
+            <div className="rounded-full p-[2px] bg-white border-2 flex items-center justify-center">
             {
                 currentUser?
-                <img src={currentUser.photoURL} alt="" className="w-[20px] h-[20px]"/>
+                <img src={currentUser.photoURL} alt="" className="w-[25px] h-[25px] rounded-full"/>
                 : <box-icon name='user' size="20px"></box-icon>
             }
             </div>
           
         </motion.button>
-        <motion.ul className="absolute bg-white px-4 py-2 w-[140px] font-poppins flex flex-col gap-2 left-[-100%]"
+        <motion.ul className="absolute bg-white px-4 py-2 w-[140px] font-poppins flex flex-col gap-1 left-[-100%] mt-[10px] shadow-md border-2 rounded-md text-sm"
           variants={{
             open: {
               clipPath: "inset(0% 0% 0% 0% round 10px)",
@@ -82,12 +82,16 @@ export default function AnimatedProfile() {
           }}
           style={{ pointerEvents: isOpen ? "auto" : "none" }}
         >
-          <motion.li variants={itemVariants} className="text-lg font-bold break-normal">
+          <motion.li variants={itemVariants} className="text-lg font-bold break-normal flex flex-col">
+            <h1 className="font-normal text-sm">Profile Name:</h1>
             {
                 currentUser ? 
                 currentUser.displayName : 'Anonymous'
             }
           </motion.li>
+          <motion.li variants={itemVariants} className="pt-2">
+                  Setting
+            </motion.li>
           {
             currentUser ? 
             <motion.li variants={itemVariants}>
