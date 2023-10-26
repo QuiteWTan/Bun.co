@@ -6,7 +6,7 @@ const MenuOverlay = ({ NavLinks, NavState, text}) => {
   return (
     <ul className={`flex flex-col items-center ${text}`}>
         {NavLinks.map((link, index) => (
-            <Link to=""
+            <Link to={link.link}
                 className="block py-2 pl-3 pr-4 sm:text-xl rounded md:p-0" key={index}>
                     {link.Name}
             </Link>
