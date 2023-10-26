@@ -159,7 +159,7 @@ const SecondSection = () => {
   return (
     <div className='w-full gap-12 px-4 md:section font-poppins flex justify-center py-4 overflow-x-hidden'>
         <div className='max-w-[1200px] w-full flex flex-col justify-center gap-8'>
-            <h1 className='text-5xl self-center pb-4 border-b-2 border-gray-800'>POPULAR CATALOG</h1>
+            <h1 className='text-xl md:text-3xl lg:text-5xl self-center pb-4 border-b-2 border-gray-800'>POPULAR CATALOG</h1>
             <motion.div className='flex flex-wrap gap-4 self-center'> 
               {
                 CatalogButton.map((button, index)=> (
@@ -169,7 +169,7 @@ const SecondSection = () => {
                       : 
                       null
                     }
-                    <h1 className={`text-lg z-2 relative duration-300 transition-all `}>{button}</h1>
+                    <h1 className={`text-sm md:text-lg z-2 relative duration-300 transition-all `}>{button}</h1>
 
                   </button>
                 ))
@@ -186,9 +186,9 @@ const SecondSection = () => {
                     variants={{
                       hidden: { opacity: 0.1, x: 100 },
                       visible: { opacity: 1, x: 0 },
-                    }} className={`grid-cols-catalogHomeXS min-[550px]:grid-cols-catalogHomeSM md:grid-cols-catalogHome md:grid-rows-2 gap-4  md:max-h-[600px] px-4 self-center ${Data.id== IndexCatalog ? 'grid' : 'hidden'}`}>
+                    }} className={`grid-cols-catalogHomeXS min-[550px]:grid-cols-catalogHomeSM md:grid-cols-catalogHome grid-rows-2 gap-4  md:max-h-[600px] px-4 self-center ${Data.id== IndexCatalog ? 'grid' : 'hidden'}`}>
                       {Data.Cake.map((data,index) => (
-                        <div className={`relative w-full h-full shadow-md border-2  ${index === 4 ? 'min-[550px]:col-span-2 md:col-span-1 md:row-start-1 md:row-end-3 md:col-start-3' : ''}`}>
+                        <div className={`relative w-full h-[35vh] md:h-full shadow-md border-2  ${index === 4 ? 'min-[550px]:col-span-2 md:col-span-1 md:row-start-1 md:row-end-3 md:col-start-3' : ''}`}>
                             <img src={data.Image} alt="" className='w-full h-full rounded-md'/>
                             <div className='absolute bg-white/30 backdrop-blur-xl w-full py-2 bottom-0 px-2 text-sm lg:text-base'>
                               <h1 className='font-bold text-gray-800 '>{data.Name}</h1>
